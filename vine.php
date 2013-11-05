@@ -231,7 +231,7 @@ class Vine{
 	
 	//Search for tags
 	public function searchTags($tag,$page){
-		$tag_response = $this->api("users/tag/" . urlencode(trim($tag)) . "?size=100&page=" . trim($page),"GET");
+		$tag_response = $this->api("timelines/tags/" . urlencode(trim($tag)) . "?size=100&page=" . trim($page),"GET");
 		if($tag_response != false){
 			if($tag_response->success == true){
 				return $tag_response;
