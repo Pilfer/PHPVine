@@ -138,9 +138,6 @@ class Vine{
 				break;
 			case "POST":
 				$response = $this->post($this->endpoint . $path,$data);
-				
-				var_dump($response);
-				
 				if($response != false){
 					$json_response = json_decode($response);
 					if($json_response){
@@ -161,9 +158,6 @@ class Vine{
 			"password" => $password
 		);
 		$login_response = $this->api("users/authenticate","POST",$data);
-		
-		//var_dump($login_response);
-		
 		if($login_response != false){
 			if($login_response->success == true){
 				$this->email = $email;
@@ -280,7 +274,6 @@ class Vine{
 	//Fetch users' feed
 	public function getUserFeed($uid,$page){
 		$feed_response = $this->api("timelines/users/" . trim($uid) . "?page=" . trim($page),"GET");
-		//var_dump($feed_response);
 		if($feed_response != false){
 			if($feed_response->success == true){
 				return $feed_response;
