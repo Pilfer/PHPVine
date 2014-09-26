@@ -15,7 +15,7 @@ $vine = new Vine();
 //Login to Vine.
 if($vine->login($vine_email,$vine_pass) == true){
 	//Fetch info on currently logged in user
-	$user_info = $vine->getMe());
+	$user_info = $vine->getMe();
 	//Make sure that shit worked
 	if($user_info != false){
 		//Are we in a cavern? CUZ WE ECHOIN' LIKE A MOFO
